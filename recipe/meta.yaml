@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7e2cbf496d2b5b1ce6b692b3cfeb7993a75d22dd34ad87d7fc09dd5df94646dc  # SHA256 from PyPI
+  sha256: b0679062eb7b291beb955d7699a984b5101074882c7fe957ffabd1341f4b072a  # SHA256 from PyPI
 
 build:
   noarch: python
@@ -50,5 +50,3 @@ about:
 extra:
   recipe-maintainers:
     - rcervinoucm
-    - Tjark Miener
-    - Alexander Cervino
