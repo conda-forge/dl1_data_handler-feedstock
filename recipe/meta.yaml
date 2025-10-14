@@ -6,29 +6,32 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dl1_data_handler-{{ version }}.tar.gz
-  sha256: b0679062eb7b291beb955d7699a984b5101074882c7fe957ffabd1341f4b072a
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 7e2cbf496d2b5b1ce6b692b3cfeb7993a75d22dd34ad87d7fc09dd5df94646dc  # SHA256 from PyPI
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.10
     - pip
+    - setuptools >=65
+    - setuptools_scm >=6.2
   run:
-    - python >=3.7
-    - numpy >=1.20
-    - scipy >=1.11
+    - python >=3.10
+    - ctapipe >=0.22,<0.25
     - astropy
-    - ctapipe ==0.21.2
-    - traitlets >=5.0
-    - jupyter
+    - numpy
     - pandas
-    - pytest-cov
-    - pytables >=3.8
+    - pip
+    - pyyaml
+    - scipy
+    - traitlets
+    - pydot
+    - setuptools
 
 test:
   imports:
@@ -39,11 +42,13 @@ test:
     - pip
 
 about:
-  home: http://github.com/cta-observatory/dl1-data-handler
-  summary: dl1 HDF5 data reader + processor
-  license: MIT
+  home: https://github.com/cta-observatory/dl1-data-handler
+  summary: "Utilities for reading and processing CTA R1/DL0/DL1 data in a standardized format."
+  license: BSD-3-Clause
   license_file: LICENSE
 
 extra:
   recipe-maintainers:
     - rcervinoucm
+    - Tjark Miener
+    - Alexander Cervino
