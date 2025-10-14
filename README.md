@@ -3,11 +3,11 @@ About dl1_data_handler-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dl1_data_handler-feedstock/blob/main/LICENSE.txt)
 
-Home: http://github.com/cta-observatory/dl1-data-handler
+Home: https://github.com/cta-observatory/dl1-data-handler
 
-Package license: MIT
+Package license: BSD-3-Clause
 
-Summary: dl1 HDF5 data reader + processor
+Summary: Utilities for reading and processing CTA R1/DL0/DL1 data in a standardized format.
 
 Current build status
 ====================
