@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: b0247ae70507a128f9c0f994cac52f640c5b378800d5a3155f597cdad6238920  # SHA256 from PyPI
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - pip
     - setuptools >=65
     - setuptools_scm >=6.2
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - ctapipe >=0.22,<0.26
     - astropy
     - numpy
@@ -40,6 +40,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/cta-observatory/dl1-data-handler
