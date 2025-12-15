@@ -1,13 +1,13 @@
 {% set name = "dl1_data_handler" %}
-{% set version = "0.14.6" %}
+{% set version = "0.14.7" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b0247ae70507a128f9c0f994cac52f640c5b378800d5a3155f597cdad6238920  # SHA256 from PyPI
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 7acc805593f1534046d05a526297179ab1c8a281db29c0b356e5b1e84a2b4d15  # SHA256 from PyPI
 
 build:
   noarch: python
