@@ -20,13 +20,15 @@ requirements:
     - pip
     - setuptools >=65
     - setuptools_scm >=6.2
+    - numpy
+    - pandas
   run:
     - python >=3.12
     - ctapipe >=0.28
     - astropy
     - eventio
-    - numpy <2.0.0 
-    - pandas <2.0.0 
+    - numpy
+    - pandas
     - pip
     - pyyaml
     - scipy
