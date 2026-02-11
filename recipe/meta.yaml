@@ -25,8 +25,8 @@ requirements:
     - ctapipe >=0.28
     - astropy
     - eventio
-    - numpy
-    - pandas
+    - numpy <2.0.0 
+    - pandas <2.0.0 
     - pip
     - pyyaml
     - scipy
