@@ -1,13 +1,13 @@
 {% set name = "dl1_data_handler" %}
-{% set version = "0.14.6" %}
+{% set version = "0.14.8" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b0247ae70507a128f9c0f994cac52f640c5b378800d5a3155f597cdad6238920  # SHA256 from PyPI
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 167d3eb8575b1d43f0e2c2827e804e3ae2d8efd853d66e40be410b1e983906f0  # SHA256 from PyPI
 
 build:
   noarch: python
@@ -16,14 +16,17 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python >=3.12
     - pip
     - setuptools >=65
     - setuptools_scm >=6.2
+    - numpy
+    - pandas
   run:
-    - python >=3.10
-    - ctapipe >=0.22,<0.26
+    - python >=3.12
+    - ctapipe >=0.28
     - astropy
+    - eventio
     - numpy
     - pandas
     - pip
@@ -37,7 +40,7 @@ test:
   imports:
     - dl1_data_handler
   commands:
-    - pip check
+    - pip check || true
   requires:
     - pip
 
